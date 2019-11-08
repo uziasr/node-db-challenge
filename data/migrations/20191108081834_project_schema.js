@@ -5,7 +5,7 @@ exports.up = function(knex) {
       tbl.increments()
       tbl.string('name', 128).unique().notNullable()
       tbl.string('description', 255)
-      tbl.boolean('completed').defaultTo(0)
+      tbl.boolean('completed').default(false)
   })
   .createTable('tasks', tbl=>{
       tbl.increments()
