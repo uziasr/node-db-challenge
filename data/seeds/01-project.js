@@ -7,7 +7,7 @@ exports.seed = function(knex) {
       return knex('projects').insert([
         {id: 1, name: 'complete website', description:'Complete and deploy a fully functional website', completed:false},
         {id: 2, name: 'make connections', description:'make connections via linkedIn and meetups', completed:true},
-        {id: 3, name: 'eat better', description:'eat better for 30 days', completed:''}
+        {id: 3, name: 'eat better', description:'eat better for 30 days', completed:false}
       ]);
     });
 };
