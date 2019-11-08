@@ -18,7 +18,7 @@ exports.up = function(knex) {
       .onDelete('RESTRICT')
       tbl.string('description',255).notNullable()
       tbl.string('notes', 255)
-      tbl.boolean('completed').notNullable()
+      tbl.boolean('completed').notNullable().default(false)
   })
   .createTable('resources', tbl=>{
       tbl.increments()
