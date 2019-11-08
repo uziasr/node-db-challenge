@@ -38,4 +38,35 @@ router.get('/tasks', (req,res)=>{
     })
 })
 
+router.post('/', (req,res)=>{
+    projectHelper.add(req.body)
+    .then(success=>{
+        res.status(201).json(success)
+    })
+    .catch(err=>{
+        res.status(500).json(err)
+    })
+})
+
+router.post('/resource', (req,res)=>{
+    projectHelper.addResource(req.body)
+    .then(success=>{
+        res.status(201).json(success)
+    })
+    .catch(err=>{
+        res.status(500).json(err)
+    })
+})
+
+router.post('/:id/task', (req,res)=>{
+    projectHelper.addTask(req.body, req.params.id)
+    .then(success=>{
+        res.status(201).json(success)
+    })
+    .catch(err=>{
+        console.log(err)
+        res.status(500).json(err)
+    })
+})
+
 module.exports = router;
